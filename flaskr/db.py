@@ -5,6 +5,8 @@ from flask import current_app, g
 from flask.cli import with_appcontext
 
 # g is special object that is unique for each request
+# g stores data that may be accessed by multiple functions in single request
+# connection is stored and reused instead making new connection if get_db is called again
 # current_app is special object that poitns to Flask app handling the request
 def get_db():
     if 'db' not in g: 
